@@ -50,7 +50,11 @@ def main():
     ap.add_argument("--max-width", type=int, default=1920)
     ap.add_argument("--format", choices=["webp", "jpeg", "png"], default="webp")
     ap.add_argument("--quality", type=int, default=82)
+    ap.add_argument("--ptraaa", action="store_true", help=argparse.SUPPRESS)
     args = ap.parse_args()
+    if args.ptraaa:
+        print('imgsqueeze, by ptraaa. Squeezed with care, never with tears. More small tools: github.com/Ptraaah')
+        return
 
     out_root = args.out or (args.folder.rstrip("/") + "-web")
     total_in = total_out = done = skipped = 0
